@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>College Course Registration System</title>
+<style>
+  *{box-sizing:border-box}
+  body{margin:0;font-family:Arial,sans-serif;background:#f2f5f9;color:#222}
+  header{background:#1f3a5f;color:#fff;padding:40px 20px;text-align:center}
+  header h1{margin:0 0 8px}
+  main{max-width:900px;margin:30px auto;padding:0 20px}
+  section{background:#fff;padding:22px;border-radius:8px;margin-bottom:20px}
+  h2{margin-top:0;color:#1f3a5f}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+  .card{background:#eef2f7;padding:14px;border-radius:6px}
+  table{width:100%;border-collapse:collapse}
+  th,td{border-bottom:1px solid #ddd;padding:10px;text-align:left}
+  th{background:#eef2f7}
+  code,pre{background:#1e1e1e;color:#e6e6e6;border-radius:6px}
+  pre{padding:14px;overflow-x:auto}
+  code{padding:2px 6px}
+  a.btn{display:inline-block;background:#fff;color:#1f3a5f;padding:10px 20px;border-radius:4px;text-decoration:none;font-weight:bold;margin-top:12px}
+  footer{text-align:center;padding:20px;color:#666}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>College Course Registration System</h1>
+  <p>Java Servlets + JSP + JDBC + MySQL</p>
+  <a class="btn" href="#run">How to run</a>
+</header>
+
+<main>
+  <section>
+    <h2>About the project</h2>
+    <p>A web application where students register, log in, view available courses, enroll in or drop courses, and update their profile. All data is stored in a MySQL database and accessed using JDBC.</p>
+  </section>
+
+  <section>
+    <h2>Features</h2>
+    <div class="grid">
+      <div class="card">Student registration and login</div>
+      <div class="card">View all courses with seats left</div>
+      <div class="card">Enroll in a course</div>
+      <div class="card">Drop a course</div>
+      <div class="card">My Courses with total credits</div>
+      <div class="card">Edit profile</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>SQL operations used</h2>
+    <table>
+      <tr><th>Operation</th><th>Where it is used</th></tr>
+      <tr><td>INSERT</td><td>Register student, enroll in course</td></tr>
+      <tr><td>SELECT</td><td>Login, course list, My Courses, profile</td></tr>
+      <tr><td>UPDATE</td><td>Seats left, drop course, edit profile</td></tr>
+    </table>
+  </section>
+
+  <section>
+    <h2>Technologies</h2>
+    <div class="grid">
+      <div class="card"><b>Frontend</b><br>JSP, HTML, CSS</div>
+      <div class="card"><b>Backend</b><br>Java Servlets, JDBC</div>
+      <div class="card"><b>Database</b><br>MySQL</div>
+      <div class="card"><b>Server</b><br>Apache Tomcat 9</div>
+    </div>
+  </section>
+
+  <section id="run">
+    <h2>How to run</h2>
+    <ol>
+      <li>Run <code>database.sql</code> in MySQL.</li>
+      <li>Set your MySQL password in <code>src/com/college/DBUtil.java</code>.</li>
+      <li>Add <code>mysql-connector-j</code> jar to <code>WebContent/WEB-INF/lib</code>.</li>
+      <li>Import into Eclipse as a Dynamic Web Project and run on Tomcat 9.</li>
+      <li>Open the URL below in your browser.</li>
+    </ol>
+    <pre>http://localhost:8080/course-registration/</pre>
+  </section>
+
+  <section>
+    <h2>Project structure</h2>
+<pre>course-registration/
+  database.sql
+  src/com/college/   (DBUtil, Login, Register, Course, Enroll, Profile servlets)
+  WebContent/        (index.jsp, register.jsp, courses.jsp, mycourses.jsp, profile.jsp, css/)</pre>
+  </section>
+</main>
+
+<footer>Exercise 16 &middot; Developed by Adhi M</footer>
+</body>
+</html>
